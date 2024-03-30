@@ -13,9 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Toggle("Wifi", isOn: $isToggleOn)
+            Form {
+                Toggle("Wi-fi", systemImage: "wifi", isOn: $isToggleOn)
+                    .tint(.pink)
+                Toggle("Pdf", systemImage: "doc", isOn: $isToggleOn)
+                    .tint(.orange)
+                Toggle("Radio", systemImage: "radio", isOn: $isToggleOn)
+                    .tint(.yellow)
+            }
         }
-        .padding()
     }
 }
 
